@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visionaries Logo</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .logo {
+            position: relative;
+            width: 200px; /* Size of the circular logo */
+            height: 200px; /* Size of the circular logo */
+            border-radius: 50%; /* Makes the logo circular */
+            background-color: #4A90E2; /* Background color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .text {
+            position: absolute;
+            font-size: 2em; /* Font size */
+            font-weight: bold;
+            color: white;
+            animation: rotateText 10s linear infinite; /* Animation for rotation */
+        }
+
+        @keyframes rotateText {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .logo:hover {
+            transform: scale(1.1); /* Scale up on hover */
+            background-color: #E94E77; /* Change background color on hover */
+        }
+
+        .logo:active {
+            transform: scale(0.9); /* Scale down when clicked */
+        }
+    </style>
+</head>
+<body>
+    <div class="logo" id="logo">
+        <div class="text">Visionaries</div>
+    </div>
+
+    <script>
+        const logo = document.getElementById('logo');
+        
+        logo.addEventListener('click', () => {
+            alert('Welcome to Visionaries!');
+        });
+
+        logo.addEventListener('mouseenter', () => {
+            logo.style.cursor = 'pointer'; // Change cursor on hover
+        });
+
+        logo.addEventListener('mouseleave', () => {
+            logo.style.cursor = 'default'; // Reset cursor when not hovering
+        });
+    </script>
+</body>
+</html>
